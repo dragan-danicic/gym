@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>ID:{{this.idCurr}} </h1> 
+
+    <app-choose-duration [id]="idCurr" (responseCame)="handler($event)"></app-choose-duration>
+
+    <h1> Name:{{this.nameT}} </h1> 
+
+    <h2 class="g">{{messageSucc}}</h2>
+    <h2 class="r">{{messageErr}}</h2>
+
+    <table mdbTable hover="true">
+        <thead>
+            <tr> 
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr mdbTableCol *ngFor="let el of cards">
+                <th scope="row">{{el.id}}</th>
+                <td>{{el.duration}} month(s) </td>
+                <td>{{el.number}}</td>
+                <td>{{el.lastTraining}}</td>
+                <td>{{el.start}}</td>
+                <td>{{el.end}} </td>
+                <td> {{el.status}} </td>  
+            </tr>
+        </tbody>
+    </table>
+</div>

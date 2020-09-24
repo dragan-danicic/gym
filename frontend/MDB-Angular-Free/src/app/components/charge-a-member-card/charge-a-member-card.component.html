@@ -1,0 +1,29 @@
+<div class="bg">
+    <div class="h">
+        <!-- Default form login -->
+        <form class="text-center border border-light p-5" (ngSubmit)="this.charge()">
+
+            <p class="h4 mb-4" id="col">Insert username of a member and duration of a card</p>
+
+            <select name="name3" class="browser-default custom-select" [(ngModel)]="selectedUsername">
+                <option *ngFor="let c of usernames" [ngValue]="c">{{c}}</option>
+            </select>
+            <br><br>
+            <select name="name1" class="browser-default custom-select" [(ngModel)]="selectedValue">
+                <option *ngFor="let c of options" [ngValue]="c.id">{{c.value}}</option>
+            </select>
+            
+            <!-- Sign in button -->
+            <button mdbBtn block="true" class="my-4 primary-color" type="submit">Charge</button>
+
+            <div class="succ">{{messageSucc}}</div>
+            <div class="err">{{messageErr}}</div>
+            <div class="err">{{messageUsername}}</div>
+            <div class="err">{{messageDuration}}</div>
+        </form>
+        <!-- Default form login -->
+
+    </div>
+
+</div>
+

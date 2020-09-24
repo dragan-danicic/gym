@@ -1,0 +1,28 @@
+<div class="container h">
+    <div class="row">
+        <div class="col-sm k">
+            <h2>Search trainees by id:</h2>
+        </div>
+        <div class="col-sm">
+            <form class="form-inline md-form mr-auto mb-4" (ngSubmit)="this.search()">
+                <input class="form-control mr-sm-2" type="text" name="n1" placeholder="Search" aria-label="Search"
+                    [(ngModel)]="this.idTrainee">
+                <button type="submit" mdbBtn color="indigo" size="sm" rounded="true" mdbWavesEffect>Search</button>
+                <div class="c">{{errorMessage}}</div>
+            </form>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+
+
+<div *ngIf="idCurr">
+    <app-show-trainee [cards]="cards" [nameT]="nameT" [idCurr]="idCurr" (responseCame)="handler($event)">
+    </app-show-trainee>
+</div>
+
+
+
+<div class="e">
+
+</div>

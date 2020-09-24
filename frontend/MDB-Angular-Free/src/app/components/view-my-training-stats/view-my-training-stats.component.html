@@ -1,0 +1,72 @@
+<!-- 
+<input class="form-control mb-4" placeholder="name of a group training" name="name1" >
+
+<input class="form-control mb-4" type="date" placeholder="choose a day" name="name2" >
+<input class="form-control mb-4" type="date" placeholder="choose a day" name="name3" >
+
+
+<button mdbBtn block="true" class="my-4 primary-color" color="blue" type="submit">Create</button> -->
+
+
+
+
+
+<div class="h">
+    <div class="row justify-content-center">
+        <h1>Statistic of my trainings</h1>
+    </div><br><br>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            Choose name of a training
+        </div>
+        <div class="col-4">
+            <select [(ngModel)]="selectedValue" class="form-control mb-4">
+                <option *ngFor="let t of trainings" [value]="t">{{t}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            Choose start date
+        </div>
+        <div class="col-4">
+            <input class="form-control mb-4" type="date" placeholder="" name="name2" [(ngModel)]="this.date1">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            Choose end date
+        </div>
+        <div class="col-4">
+            <input class="form-control mb-4" type="date" placeholder="" name="name2" [(ngModel)]="this.date2">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="sendRequest()">Statistic</button>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+    
+    <div class="row justify-content-center" style="color: red;">
+        {{messErr}}
+    </div>
+
+
+
+    <br><br>
+
+    <div *ngIf="show" class="row justify-content-center">
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+            <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+                [plugins]="lineChartPlugins">
+            </canvas>
+        </div>
+        <div class="col-3">
+        </div>
+    </div>
+</div>

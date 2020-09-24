@@ -1,0 +1,85 @@
+<header class="h-100">
+    <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark indigo scrolling-navbar intro-fixed-nav"
+        [containerInside]="false">
+        <mdb-navbar-brand>
+            <a *ngIf="!isTrainer()" class="logo navbar-brand" routerLink=""><strong>Home</strong></a>
+        </mdb-navbar-brand>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <li *ngIf="!isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="trainers" routerLinkActive="active">Trainers <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li *ngIf="!isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="images" routerLinkActive="active">Images</a>
+                </li>
+                <li *ngIf="!isAnybody()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="log-in" routerLinkActive="active">Log In</a>
+                </li>
+                <li *ngIf="!isAnybody()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="sign-up-a-trial-training" routerLinkActive="active">Sign up a trial
+                        training</a>
+                </li>
+                <li *ngIf="isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="search-trainees-and-charge-a-membercard"
+                        routerLinkActive="active">Search trainees and charge a membercard</a>
+                </li>
+                <li *ngIf="isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="create-a-group-training" routerLinkActive="active">Create a group
+                        training</a>
+                </li>
+                <li *ngIf="isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="view-group-trainings" routerLinkActive="active">View group
+                        trainings</a>
+                </li>
+                <li *ngIf="isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="view-trial-trainings" routerLinkActive="active">View trial
+                        trainings</a>
+                </li>
+                <li *ngIf="isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="add-a-new-trainee" routerLinkActive="active">Add a new trainee</a>
+                </li>
+
+
+                <li *ngIf="isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="view-my-stats" routerLinkActive="active">View my stats</a>
+                </li>
+
+                <li *ngIf="isTrainer()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="view-stats-of-others" routerLinkActive="active">View stats of trainers</a>
+                </li>
+
+
+                <li *ngIf="isTrainee()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="trainee-profile" routerLinkActive="active">Profile</a>
+                </li>
+                <li *ngIf="isTrainee()" class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="view-group-trainings-and-sign-up" routerLinkActive="active">View
+                        group trainings and sign up</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <mdb-icon fab icon="twitter"></mdb-icon>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a *ngIf="isAnybody()" class="nav-link"> {{getName()}}
+                        <div class="btn-group" mdbDropdown>
+                            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                                <a class="dropdown-item" routerLink="change-password" routerLinkActive="active">Change
+                                    password</a>
+                                <div class="divider dropdown-divider"></div>
+                                <a class="dropdown-item" (click)="httpLogOut()">Log out</a>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </links>
+    </mdb-navbar>
+</header>

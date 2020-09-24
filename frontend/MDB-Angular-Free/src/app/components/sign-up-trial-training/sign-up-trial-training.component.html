@@ -1,0 +1,34 @@
+<div class="container h">
+
+    <!-- Default form contact -->
+    <form class="text-center border border-light p-5" (ngSubmit)="this.trialTraining()">
+
+        <p class="h4 mb-4">Schedule your training</p>
+
+        <!-- Name -->
+        <input type="text" id="defaultContactFormName" class="form-control mb-4" name="n1" placeholder="Name"
+            [(ngModel)]="this.name">
+
+        <!-- Email -->
+        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" name="n2" placeholder="Phone"
+            [(ngModel)]="this.phone">
+
+
+        <!-- Message -->
+        <div class="form-group">
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" name="n3"
+                [(ngModel)]="this.message" placeholder="Message"></textarea>
+        </div>
+
+
+        <!-- Send button -->
+        <button mdbBtn color="blue" block="true" type="submit">Send</button>
+        <br>
+        <div class="s">{{succ}}</div>
+        <div class="r">{{err}}{{m1}}{{m2}}</div>
+    </form>
+    <!-- Default form contact -->
+    <br>
+    <p>This is totally free.Our staff will call you as soon as possible.</p>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="h">
+    <div class="row justify-content-center">
+        <h1>Statistic of trainers</h1>
+    </div><br><br><br>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            Choose start date
+        </div>
+        <div class="col-4">
+            <input class="form-control mb-4" type="date" placeholder="" name="name2" [(ngModel)]="this.date1">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            Choose end date
+        </div>
+        <div class="col-4">
+            <input class="form-control mb-4" type="date" placeholder="" name="name2" [(ngModel)]="this.date2">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="sendRequest()">Statistic</button>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+
+    <div class="row justify-content-center" style="color: red;">
+        {{messErr}}
+    </div>
+
+    <br><br>
+
+    <div *ngIf="show" class="row justify-content-center">
+        <div class="col-3">
+        </div>
+        <div class="chart-wrapper col-6">
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType"
+                [colors]="barChartColors">
+            </canvas>
+        </div>
+        <div class="col-3">
+        </div>
+    </div>
+</div>

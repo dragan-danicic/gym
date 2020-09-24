@@ -1,0 +1,35 @@
+<!-- Default form register -->
+<div class="h">
+    <form class="text-center border border-light p-5" (ngSubmit)="this.add()">
+
+        <p class="h4 mb-4">Add a new trainee</p>
+
+        <div class="form-row mb-4">
+            <div class="col">
+                <!-- First name -->
+                <input type="text" id="defaultRegisterFormFirstName" [(ngModel)]="this.firstName" name="n1"
+                    class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <!-- Last name -->
+                <input type="text" id="defaultRegisterFormLastName" name="n2" [(ngModel)]="this.lastName"
+                    class="form-control" placeholder="Last name">
+            </div>
+        </div>
+
+        <!--username -->
+        <input type="username" [(ngModel)]="this.username" name="n3" id="defaultRegisterFormEmail"
+            class="form-control mb-4" placeholder="username">
+
+
+        <!-- Phone number -->
+        <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
+            aria-describedby="defaultRegisterFormPhoneHelpBlock" [(ngModel)]="this.phone" name="n4">
+
+        <!-- Sign up button -->
+        <button mdbBtn color="blue" block="true" class="my-4" type="submit">ADD</button>
+        <div class="col">{{m1}}{{m2}}{{m3}}{{m4}}{{message}} </div>
+        <div class="k">{{message2}}</div>
+    </form>
+    <!-- Default form register -->
+</div>

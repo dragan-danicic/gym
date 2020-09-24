@@ -1,0 +1,16 @@
+
+.h{
+    width: 70%;
+    margin: auto;
+    padding-top: 6%;
+    padding-bottom: 30%;
+    color: darken($color: #000000, $amount: 0); 
+}
+
+  .err{
+      color: red;
+  }
+
+  .succ{
+      color:green;
+  }

@@ -1,0 +1,22 @@
+
+<div class="bg">
+    <div class="h">
+    <table mdbTable hover="true">
+        <thead>
+          <tr>
+            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let el of elements">
+            <th scope="row">{{el.id}}</th>
+            <td>{{el.start}}</td>
+            <td>{{el.duration}} month(s) </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      
+    </div>
+    
+    </div>

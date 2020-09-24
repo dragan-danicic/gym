@@ -1,0 +1,25 @@
+<div class="h">
+    <!-- Default form login -->
+    <form class="text-center border border-light p-5" (ngSubmit)="this.make()">
+
+        <p class="h4 mb-4" id="col">Insert a group training and time</p>
+
+        <input class="form-control mb-4" placeholder="name of a group training" name="name1" [(ngModel)]="this.name">
+
+        <input class="form-control mb-4" type="date" placeholder="choose a day" name="name2" [(ngModel)]="this.date">
+
+        <input class="form-control mb-4" type="time" min="09:00" max="18:00" name="name3" [(ngModel)]="this.time">
+
+
+        <!-- Sign in button -->
+        <button mdbBtn block="true" class="my-4 primary-color" color="blue" type="submit">Create</button>
+        <div class="succ">{{messageSucc}}</div>
+        <div class="err">{{messageErr}}</div>
+        <div class="err">{{m1}}</div>
+        <div class="err">{{m2}}</div>
+        <div class="err">{{m3}}</div>
+
+    </form>
+    <!-- Default form login -->
+
+</div>

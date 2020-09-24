@@ -1,0 +1,19 @@
+
+<table mdbTable hover="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of elements">
+        <th scope="row">{{el.id}}</th>
+        <td>{{el.name}}</td>
+        <td>{{el.date}}</td>
+        <td>{{el.time}}</td>
+        <td>  <button *ngIf="el.allowedToUnsign" mdbBtn type="button" color="purple" mdbWavesEffect (click)="remove(el.id);" >Unsign</button> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="r">{{message}}</p>
